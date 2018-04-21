@@ -1,0 +1,1 @@
+exports.DigilentChartModule = require('./dist/digilent-chart.module').DigilentChartModule;

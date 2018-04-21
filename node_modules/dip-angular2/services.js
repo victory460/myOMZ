@@ -1,0 +1,1 @@
+exports.DeviceManagerService = require('./dist/device/device-manager.service').DeviceManagerService;
