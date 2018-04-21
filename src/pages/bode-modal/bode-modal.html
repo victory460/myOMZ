@@ -1,0 +1,69 @@
+<ion-content class="calibration-container">
+
+    <ion-slides #bodeSlider>
+
+        <ion-slide class="slide-container">
+            <div class="content-container">
+                <div class="slide-header">Bode Calibration</div>
+                <div class="bode-slide-content">
+                    Please connect Osc Ch 1 to Wavegen Ch 1 and click calibrate.
+                </div>
+                <div class="navigation-button-container">
+                    <ion-row>
+                        <ion-col text-left>
+                            <button ion-button icon-left class="text-button-side disable-hover" (click)="closeModal(false)">
+                                <img class="custom-image-button" src="assets/img/close.svg" />
+                                Close
+                            </button>
+                        </ion-col>
+                        <ion-col text-right>
+                            <button ion-button icon-right class="text-button-side disable-hover" (click)="runBodeInit()">
+                                Calibrate
+                                <img class="custom-image-button" src="assets/img/arrow-forward.svg">
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-slide>
+
+        <ion-slide class="slide-container">
+            <div class="content-container">
+                <div class="slide-header">Calibration Complete</div>
+                <div class="bode-slide-content">
+                    See calibration data below. {{exitAfterCalibration ? '' : 'Connect Osc Ch 1 and Wavegen Ch 1 back to your circuit and click start.'}}
+                </div>
+                <div class="bode-calibration-results">
+                    <ion-row class="bode-header-row">
+                        <ion-col>
+                            Frequency
+                        </ion-col>
+                        <ion-col>
+                            Amplitude
+                        </ion-col>
+                    </ion-row>
+                    <ion-row *ngFor="let pair of bodePlotComponent.calibrationData">
+                        <ion-col>
+                            {{pair[0] | unitFormat:'Hz'}} 
+                        </ion-col>
+                        <ion-col>
+                            {{pair[1] | unitFormat:'V'}}
+                        </ion-col>
+                    </ion-row>
+                </div>
+                <div class="navigation-button-container">
+                    <ion-row>
+                        <ion-col text-right>
+                            <button ion-button icon-right class="text-button-side disable-hover" (click)="closeModal(true)">
+                                {{exitAfterCalibration ? 'Done' : 'Start'}}
+                                <img class="custom-image-button" [src]="exitAfterCalibration ? 'assets/img/check.svg' : 'assets/img/arrow-forward.svg'">
+                            </button>
+                        </ion-col>
+                    </ion-row>
+                </div>
+            </div>
+        </ion-slide>
+
+    </ion-slides>
+
+</ion-content>

@@ -1,0 +1,32 @@
+<div class="dc-container">
+	<div class="header-bar-side" center text-center>
+        <ion-row>
+            <ion-col class="header-side-col" center text-left>
+                <button ion-button clear class="dropdown-image-button" (tap)="toggleDcSettings()">
+                    <img class="custom-dropdown-img" [ngClass]="{rotateOn: showDcSettings}" src="assets/img/collapse-arrow-right.svg">
+                </button>
+            </ion-col>
+            <ion-col center text-center>
+                <span class="header-bar-title instrument-header">DC Power Supply</span>
+            </ion-col>
+            <ion-col class="header-side-col" center text-right>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div class="dc-content-container">
+        <div *ngIf="showDcSettings">
+            <ion-row *ngFor="let supply of voltageSupplies; let i = index">
+                <ion-col class="input-label" center>
+                    Ch {{i + 1}}
+                </ion-col>
+                <ion-col class="input-col">
+                    <div class="label-flex">
+                        <div class="label-left" [tooltip]="tooltipService.getTooltip('dcVoltage').message" [tooltipAnimation]="true" tooltipPlacement="top">
+                            <input class="custom-input" step="any" [ngModel]="voltages[i] | unitFormat:'V'" (focusout)="inputLeave($event, i)" (keypress)="checkForEnter($event, i)" />
+                        </div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,215 @@
+.fgen-container .power-button-container
+{
+    text-align: center;
+}
+
+.fgen-container .button-label
+{
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.fgen-container .ion-item-outline
+{
+    margin-left: 16px;
+    border-bottom: solid #686868 1px;
+}
+
+.fgen-container .custom-ion-item
+{
+    
+    background-color: #535353;
+    border-bottom: solid black 1px;
+}
+
+.fgen-container .custom-ion-label
+{
+    color: #CCCCCC;
+    font-size: 1.2rem;
+    margin-top: 8px;
+}
+
+.fgen-container
+{
+    border-bottom: solid black 1px;
+    border-top: solid #686868 1px;
+}
+
+.fgen-container .input-col
+{
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 6px;
+}
+
+.show 
+{
+    z-index: 2;
+    display: block;
+}
+
+.fgen-container .powerOff
+{
+    background-color: #535353;
+    color: #CCCCCC;
+    border-radius: 0px;
+    margin: 0px;
+    border:solid #535353 1px;
+    height: 25px;
+    font-size: 12px;
+    position: relative;
+}
+
+.fgen-container .awg-chan-container
+{
+    margin-left: 8px;
+}
+
+.fgen-container .powerOn
+{
+    background-color: #4487BA;
+    color: white;
+}
+
+.fgen-container .power-underline
+{
+    border-bottom: solid #686868 1px !important;
+}
+
+.fgen-container .powerOff:hover
+{
+    background-color: #535353;
+    border: solid white 1px;
+}
+
+.fgen-container .dummy-power-underline
+{
+    display: inline-block;
+    border-bottom: solid #535353 1px;
+}
+
+.fgen-container .powerOn:hover
+{
+    background-color: #4487BA;
+}
+
+.fgen-container .list-controls
+{
+    margin-bottom: 2px;
+    background-color: #535353;
+    border-top: solid #686868 1px;
+}
+
+.fgen-container .list-item
+{
+    background-color: #535353;
+    color: white;
+}
+
+.fgen-container .item-inner {
+    border-bottom-color: #686868 !important;
+    box-shadow: inset 0 -1px 0 0 black !important;
+}
+
+.item-input.input-has-focus .item-inner {
+    border-bottom-color: #686868;
+    box-shadow: inset 0 -1px 0 0 black;
+}
+
+ion-list .item:first-child {
+    border-top: solid #686868 1px;
+}
+
+ion-list .item-input.ng-valid.input-has-value:not(.input-has-focus):last-child {
+    border-bottom-color: #535353;
+    box-shadow: inset 0 -1px 0 0 black;
+}
+
+ion-list .item-input.input-has-focus:last-child {
+    border-bottom-color: #535353;
+    box-shadow: inset 0 -1px 0 0 black;
+}
+
+.fgen-container .list-md > .item-block:last-child
+{
+    border-bottom: none;
+}
+
+.fgen-container .touch-button-col
+{
+    padding: 0;
+    width: 26px;
+}
+
+.fgen-container .freq-input-row
+{
+    padding-top: 5px;
+}
+
+.fgen-container .input-label
+ {
+     color: #CCCCCC;
+     min-width: 80px;
+     padding-right: 0px;
+     padding-left: 15px;
+     padding-top: 0px;
+ }
+
+ .fgen-container .label-flex
+{
+    display: flex;
+    flex-direction: row;
+    min-width: 114px;
+}
+
+.fgen-container .label-left
+{
+    flex: 1 0 84px;
+    align-self: center;
+    color: #CCCCCC
+}
+
+.fgen-container .selected-wavetype
+{
+    background-color: #4487BA !important;
+}
+
+.fgen-container .wavetype-image
+{
+    cursor: pointer;
+    display: inline-block;
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    background-color: #535353;
+    width: 35px;
+    height: 25px;
+    position: relative;
+    img {
+        max-height: 100%;
+    }
+}
+
+.fgen-container .image-end
+{
+    border-right: solid black 1px;
+}
+
+.fgen-container .wavetype-images-container
+{
+    //Have to do this to remove default margin on image LOL
+    font-size: 0;
+    padding-top: 5px;
+    background-color: #535353;
+}
+
+.fgen-container .fgen-content-container
+{
+    padding-bottom: 5px;
+}
+
+.fgen-container .dim-image
+{
+    opacity: 0.4;
+    cursor: default;
+}

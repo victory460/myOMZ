@@ -1,0 +1,180 @@
+.digi-container
+{
+    background-color: #535353;
+    border-top: solid #686868 1px;
+    border-bottom: solid black 1px; 
+}
+
+.digi-container .title
+{
+    padding: 1px 0px 1px 0px;
+    text-align: center;
+    background-color: #535353;
+    font-size: 100%;
+    color: white;
+}
+
+.digi-container .input
+{
+    border: none;
+}
+
+.digi-right
+{
+    text-align: right;
+    padding-right: 5px;
+    border-top: solid #686868 1px;
+}
+
+.digi-container .channel-container
+{
+    color: white;
+    display: inline-block;
+}
+
+.digi-container .channel-button
+{
+    background-color: #4487BA;
+    border: solid #33658B 2px;
+    width: 25px;
+    height: 25px;
+    opacity: 0.2;
+    margin: 2px;
+    padding: 0;
+    text-align: center;
+}
+
+.digi-container .button-on
+{
+    opacity: 1;
+}
+
+.digi-container .digi-col
+{
+     max-width: 50px;
+     min-width: 41px;
+     padding: 0px 0px 0px 0px;
+     flex: 1 1 41px;
+}
+
+.digi-container .channel-container .tooltip-inner
+{
+    background-color: #222222;
+}
+
+.digi-container .channel-container .tooltip.left .tooltip-arrow
+{
+    border-left-color: #222222;
+}
+
+.digi-container .channel-container .tooltip.right .tooltip-arrow
+{
+    border-right-color: #222222;
+}
+
+.digi-container .channel-container .tooltip.top .tooltip-arrow
+{
+    border-top-color: #222222;
+}
+
+.digi-container .channel-container .tooltip.bottom .tooltip-arrow
+{
+    border-bottom-color: #222222;
+}
+
+.digi-container .header-bar
+{
+    background-color:#535353;
+    color: white;
+}
+
+.digi-container .title-container
+{
+    padding-top: 5px;
+}
+
+.digi-container .button-output
+{
+    border: solid black 1px !important;
+}
+
+.digi-container .dummy-border
+{
+    border: solid #535353 1px;
+}
+
+.digi-container .mode-select
+{
+    color: white;
+    border-left: solid black 1px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    background-color: #535353;
+    display: inline-block;
+    padding: 2px 8px 2px 8px;
+    text-align: center;
+    min-width: 75px;
+    cursor: pointer;
+}
+
+.digi-container .mode-left
+{
+    border-right: solid black 1px;
+}
+
+.digi-container .mode-selected
+{
+    background-color: #4487BA;
+}
+
+.digi-container .mode-row ion-col
+{
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+
+.digi-container .bottom-buttons
+{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+.digi-container .bottom-button
+{
+    border-right: solid #535353 1px;
+    margin: 0px;
+}
+
+.digi-container .bottom-button-right
+{
+    border-right: solid black 1px;
+}
+
+.digi-container .button-indicator
+{
+    color: white;
+    font-size: 12px;
+}
+
+.digi-container .la-mode
+{
+    background-color: green;
+}
+
+.digi-container .direction-mode
+{
+    background-color: orange;
+}
+
+.digi-container .la-mode-border
+{
+    border-color: green;
+}
+
+.digi-container .direction-mode-border
+{
+    border-color: orange;
+}

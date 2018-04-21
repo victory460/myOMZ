@@ -1,0 +1,73 @@
+.settings-body
+{
+    background-color: #535353;
+    color: white;
+}
+
+.settings-body .device-connect-container
+{
+    display: inline-block;
+    padding: 10px;
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+}
+
+.settings-body .center
+{
+    text-align: center;
+}
+
+.settings-body .timeout-container
+{
+    display: flex;
+    align-items: center;
+    input {
+        margin-right: 8px;
+        max-width: 100px;
+    }
+}
+
+.settings-body .item-button
+{
+    font-size: 10px;
+}
+
+.settings-body .advanced-settings-container
+{
+    overflow: hidden;
+}
+
+.settings-body .advanced-button
+{
+    font-size: 14px;
+    color: white;
+}
+
+.keith-container
+{
+    position: fixed;
+    z-index: 2000;
+    bottom: 0;
+    transform: translate(0%, 100%);
+    transition: 1s;
+    width: 100%;
+    font-size: 0;
+}
+
+.keith-container.show-keith
+{
+    transform: translate(0%, 0%);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.keith-img-wrapper
+{
+    display: inline-block;
+    font-size: 0;
+}
+
+.keith-img
+{
+    max-width: 100%;
+}

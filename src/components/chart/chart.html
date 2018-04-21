@@ -1,0 +1,132 @@
+<div #oscopeChartInner class="chart-component-wrapper">
+
+        <div class="chart-bottom-container">
+                <ion-row class="chart-info">
+                    <!--左下角 Math所有测量measure -->
+                    <ion-col center *ngIf="mathEnabled" class="info-col">
+                        <ion-row center class="cursor-container">
+                            <button ion-button icon-right class="text-button-side disable-hover" (tap)="openMathModal($event)" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('mathButton').message" [tooltipAnimation]="true" tooltipPlacement="right">
+                                <span class="collapse-button">Math</span>
+                                <img class="button-side-svg" src="assets/img/math.svg" />
+                            </button>
+
+                            <button ion-button class="icon-only-button-side disable-hover" (tap)="updateMath()" [tooltip]="tooltipService.getTooltip('refreshMathButton').message" [tooltipAnimation]="true" tooltipPlacement="right">
+                                <img class="button-side-svg" src="assets/img/refresh.svg" />
+                            </button>
+
+                            <ion-col center class="cursor-info-col" id="test-test">
+                                <span *ngIf="selectedMathInfo[0]">
+                                    <span [style.color]="chart.getData()[selectedMathInfo[0].channel].color">&#9632;</span>
+                                    {{selectedMathInfo[0].measurement}}: {{selectedMathInfo[0].value}}
+                                </span>
+                                <br>
+                                <span *ngIf="selectedMathInfo[1]">
+                                    <span [style.color]="chart.getData()[selectedMathInfo[1].channel].color">&#9632;</span>
+                                    {{selectedMathInfo[1].measurement}}: {{selectedMathInfo[1].value}}
+                                </span>
+                            </ion-col>
+
+                            <ion-col center class="cursor-info-col">
+                                <span *ngIf="selectedMathInfo[2]">
+                                    <span [style.color]="chart.getData()[selectedMathInfo[2].channel].color">&#9632;</span>
+                                    {{selectedMathInfo[2].measurement}}: {{selectedMathInfo[2].value}}
+                                </span>
+                                <br>
+                                <span *ngIf="selectedMathInfo[3]">
+                                    <span [style.color]="chart.getData()[selectedMathInfo[3].channel].color">&#9632;</span>
+                                    {{selectedMathInfo[3].measurement}}: {{selectedMathInfo[3].value}}
+                                </span>
+                            </ion-col>
+                            
+                        </ion-row>
+                        <button ion-button icon-right class="text-button-side disable-hover" (tap)="openCursorModal($event)" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('cursorButton').message" [tooltipAnimation]="true" tooltipPlacement="right">
+                                <span class="collapse-button">Cursors</span>
+                                <img class="button-side-svg" src="assets/img/edit.svg" />
+                            </button>
+                            <ion-col center *ngIf="cursorType.toLowerCase() === 'time'" class="cursor-info-col">
+                                1: {{getCursorInfo('cursorPosition0')}} <br> 2: {{getCursorInfo('cursorPosition1')}}
+                            </ion-col>
+                            <ion-col center class="cursor-info-col" *ngIf="cursorType.toLowerCase() === 'time'">
+                                &Delta;X: {{getCursorInfo('xDelta')}} <br> 1/&Delta;X: {{getCursorInfo('xFreq')}}
+                            </ion-col>
+                            <ion-col center class="cursor-info-col" *ngIf="cursorType.toLowerCase() === 'track'">
+                                1: {{getCursorInfo('cursorPosition0')}} <br> 2: {{getCursorInfo('cursorPosition1')}}
+                            </ion-col>
+                            <ion-col center class="cursor-info-col" *ngIf="cursorType.toLowerCase() === 'track'">
+                                &Delta;X: {{getCursorInfo('xDelta')}} &Delta;Y: {{getCursorInfo('yDelta')}} <br>
+                                1/&Delta;X: {{getCursorInfo('xFreq')}}
+                            </ion-col>
+                            <ion-col center class="cursor-info-col" *ngIf="cursorType.toLowerCase() === 'voltage'">
+                                1: {{getCursorInfo('cursorPosition0')}} <br> 2: {{getCursorInfo('cursorPosition1')}}
+                            </ion-col>
+                            <ion-col center class="cursor-info-col" *ngIf="cursorType.toLowerCase() === 'voltage'">
+                                &Delta;Y: {{getCursorInfo('yDelta')}}
+                            </ion-col>
+                    </ion-col>
+        
+                    <!-- cursor 光标测量 -->
+                    <!-- <ion-col *ngIf="cursorsEnabled" center class="info-col"> -->
+                        <!-- <ion-row center class="cursor-container"> -->
+                 
+                        <!-- </ion-row> -->
+                    <!-- </ion-col> -->
+                </ion-row>
+            </div>
+
+           
+    <div class="chart-container-container" id="chart-component-container">
+        <div (pinch)="pinchEvent($event)" class="chart-component-container-div">
+                            <!-- 这个其实就是示波器的黑框框 -->
+             <!-- 用的jquery.flot等js库，具体看index.html中引入的那些js库 -->
+            <div id="flotContainer"></div>   
+
+
+            <!-- <div class="chart-button-container"> -->
+
+                <!-- 屏蔽了右侧的FFT，pin等小功能按键，其中的FFT和pin（用作弹出图）还有点用 -->
+                <!-- <div>
+                    <button ion-button class="chart-button disable-hover" (tap)="toggleFft()" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('chartToggleFft').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        fft
+                    </button>
+                </div>
+                <div>
+                    <button ion-button class="chart-button disable-hover" (tap)="toBode()" [tooltip]="tooltipService.getTooltip('chartToBode').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        <img class="buttons-side-svg" src="assets/img/bode.svg">
+                    </button>
+                </div>
+                <div>
+                    <button ion-button class="chart-button disable-hover" (tap)="autoscaleAllAxes()" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('chartAutoscale').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        <img class="button-side-svg" src="assets/img/fullscreen.svg" />
+                    </button>
+                </div>
+                <div [hidden]="showFft">
+                    <button ion-button class="chart-button disable-hover" (tap)="centerOnTrigger()" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('chartCenterOnTrigger').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        <img class="button-side-svg align-trigger" src="assets/img/align-center.svg" />
+                    </button>
+                </div>
+                <div [hidden]="showFft">
+                    <button ion-button class="chart-button disable-hover" (tap)="openChartModal($event)" [disabled]="currentBufferArray.length === 0" [tooltip]="tooltipService.getTooltip('chartSettings').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        <img class="button-side-svg" src="assets/img/download.svg" />
+                    </button>
+                </div> -->
+                <!-- <div [hidden]="showFft">
+                    <button ion-button class="chart-button disable-hover" (tap)="openDevicePinout($event)" [tooltip]="tooltipService.getTooltip('chartShowDevicePinout').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                     
+                        PIN
+                    </button>
+                </div> -->
+                <!-- <div [hidden]="showFft">
+                    <button ion-button class="chart-button disable-hover" (tap)="resetDevice.emit()" [tooltip]="tooltipService.getTooltip('chartResetDevice').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                        <img class="button-side-svg" src="assets/img/restore.svg" />
+                    </button>
+                </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+
+     
+    <!-- <div class="fft-component-container" [@expand]="showFft">
+        <digilent-chart #fftChart [flotOptions]="fftChartOptions" chartId="digilentChart" (contextmenu)="fftChartContext($event)"></digilent-chart>
+    </div> -->
+
+</div>

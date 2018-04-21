@@ -1,0 +1,122 @@
+.update-firmware-container
+{
+    background-color: transparent;
+    color: white;
+}
+
+.update-firmware-container .content-container
+{
+    position: relative;
+    height: 100%;
+}
+
+.update-firmware-container .slide-container
+{
+    .slide-zoom {
+        background-color: #535353;
+        width: 800px;
+        height: 450px;
+        max-width: 100%;
+        overflow: auto;
+        max-height: 100%;
+        border: solid black 1px;
+    }
+}
+
+.update-firmware-container .slide-header
+{
+    font-size: 16px;
+    font-weight: 500;
+    padding-top: 16px;
+}
+
+.update-firmware-container .dropdown-popover-item-right
+{
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    dropdown-popover {
+        width: 100%;
+        .dropdown-select {
+            cursor: pointer;
+            height: 25px;
+        }
+        button {
+            height: 25px;
+            font-size: 14px;
+            font-weight: 400;
+            .button-inner span {
+                padding-top: 1px;
+            }
+        }
+    }
+}
+
+.update-firmware-container .firmware-list
+{
+    margin-top: 5px;
+}
+
+.update-firmware-container .hidden-file-input
+{
+     opacity: 0;
+     max-height: 0px;
+}
+
+.update-firmware-container .item-button
+{
+    font-size: 10px;
+    margin: 0;
+}
+
+.update-firmware-container .firmware-item
+{
+    background-color: #535353;
+    color: white;
+    font-size: 14px;
+    border: none !important;
+    ion-label {
+        flex: 1 0;
+        color: #CCCCCC;
+    }
+    .item-inner {
+        border: none !important;
+    }
+}
+
+.update-firmware-container .general-content
+{
+    color: #CCCCCC;
+    max-width: 70%;
+}
+
+.update-firmware-container .navigation-button-container
+{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    padding: 0 11px 11px 11px;
+}
+
+@media screen and (max-width: 768px) {
+    .update-firmware-container {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .update-firmware-container .slide-container .slide-zoom {
+        background-color: #535353;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        overflow: auto;
+        max-height: 100%;
+    }
+
+}
+
+@media screen and (max-height: 599px) {
+    .update-firmware-container {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}

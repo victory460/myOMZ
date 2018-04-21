@@ -1,0 +1,98 @@
+<div class="trigger-container">
+
+	<tooltip-content #levelButton [animation]="true" class="tutorial-ok-button">
+		<div>
+			{{tooltipService.getTooltip('tutorialTriggerLevel').message}}
+		</div>
+		<div>
+			<button ion-button class="text-button-side disable-hover" (tap)="tutorialToEdge()">ok</button>
+		</div>
+	</tooltip-content>
+
+	<tooltip-content #edgeButton [animation]="true" class="tutorial-ok-button">
+		<div>
+			{{tooltipService.getTooltip('tutorialTriggerType').message}}
+		</div>
+		<div>
+			<button ion-button class="text-button-side disable-hover" (tap)="endTutorial()">ok</button>
+		</div>
+	</tooltip-content>
+
+	<div class="header-bar-side">
+		<ion-row>
+			<ion-col class="header-side-col" center text-left>
+				<button ion-button clear class="dropdown-image-button" (tap)="toggleTriggerShow()">
+					<img class="custom-dropdown-img" [ngClass]="{rotateOn: showTriggerSettings}" src="assets/img/collapse-arrow-right.svg">
+				</button>
+			</ion-col>
+			<ion-col center text-center>
+				<span class="header-bar-title instrument-header">触发控制</span>
+			</ion-col>
+			<ion-col class="header-side-col" center text-right>
+			</ion-col>
+		</ion-row>
+	</div>
+	<div *ngIf="showTriggerSettings" class="controls-container">
+		<ion-grid class="ion-grid-no-padding">
+			<ion-row class="button-row">
+				<ion-col center text-center class="interact-button-col">
+					<div class="trigger-image-container" *ngIf="triggerSource !== 'LA'" [tooltip]="edgeButton" [tooltipAnimation]="true" tooltipPlacement="top" onlyForceShow="true"
+						[forceShow]="tutorialStage === 'type' && tutorialMode" [ngClass]="{'move-feature-to-front': tutorialMode && tutorialStage === 'type'}">
+
+						<button ion-button class="off-button disable-hover"(tap)="setTrigType('rising')"  [ngClass]="{'selected-mode':edgeDirection==='rising'}"
+							[tooltip]="tooltipService.getTooltip('triggerRisingEdge').message" [tooltipAnimation]="true" tooltipPlacement="top" [disabled]="running">
+							<img class="custom-image-button" src="assets/img/rising.svg">
+						</button>
+						<button ion-button class="off-button disable-hover" (tap)="setTrigType('falling')" [ngClass]="{'selected-mode':edgeDirection==='falling'}"
+							[tooltip]="tooltipService.getTooltip('triggerFallingEdge').message" [tooltipAnimation]="true" tooltipPlacement="top" [disabled]="running">
+							<img class="custom-image-button" src="assets/img/falling.svg">
+						</button>
+						
+						<button ion-button class="off-button disable-hover off-button-right" (tap)="setTrigType('off')" [ngClass]="{'selected-mode':edgeDirection==='off'}"
+							[tooltip]="tooltipService.getTooltip('triggerOff').message" [tooltipAnimation]="true" tooltipPlacement="top" [disabled]="running">
+							Off
+						</button>
+					</div>
+					<div *ngIf="triggerSource === 'LA'">
+						<button ion-button class="text-button-side disable-hover" (click)="openLaPopover($event)" [disabled]="running">
+							Configure
+						</button>
+					</div>
+				</ion-col>
+				<ion-col center text-center class="interact-button-col">
+					<div>
+						<button ion-button class="text-button-side disable-hover" (tap)="forceTrigger()"
+							[tooltip]="tooltipService.getTooltip('triggerForce').message" [tooltipAnimation]="true" tooltipPlacement="top">
+							Force
+						</button>
+					</div>
+				</ion-col>
+			</ion-row>
+			<ion-row class="item-row">
+				<ion-col center class="input-label">
+					<span [tooltip]="tooltipService.getTooltip('triggerSource').message" [tooltipAnimation]="true" tooltipPlacement="right">Source</span>
+				</ion-col>
+				<ion-col class="input-col" center>
+                    <div class="label-flex">
+                        <div class="label-left" [tooltip]="tooltipService.getTooltip('triggerSource').message" [tooltipAnimation]="true" tooltipPlacement="top">
+							<dropdown-popover #dropPopSource [dataArray]="triggerSources" (onSelection)="sourceSelect($event)"></dropdown-popover>
+                        </div>
+                    </div>
+				</ion-col>
+			</ion-row>
+			<ion-row class="item-row">
+				<ion-col center class="input-label">
+					<span [tooltip]="tooltipService.getTooltip('triggerLevel').message" [tooltipAnimation]="true" tooltipPlacement="right">Level</span>
+				</ion-col>
+				<ion-col center class="input-col">
+                    <div class="label-flex">
+                        <div class="label-left" [tooltip]="tutorialMode ? levelButton : tooltipService.getTooltip('triggerLevel').message" [tooltipAnimation]="true" tooltipPlacement="top" 
+							[forceShow]="tutorialStage === 'level' && tutorialMode" [ngClass]="{'move-feature-to-front': tutorialMode && tutorialStage === 'level'}">
+                            <input class="custom-input" step="any" [ngModel]="deviceDataTransferService.triggerLevel | unitFormat:'V'" (focusout)="inputLeave($event)" (keypress)="checkForEnter($event)" />
+                        </div>
+                    </div>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</div>

@@ -1,0 +1,196 @@
+.device-configure-modal-container
+{
+    background-color: #535353;
+}
+
+.device-configure-modal-container .device-configure-list
+{
+    margin-bottom: 0px;
+}
+
+.configure-item
+{
+    background-color: #535353;
+    color: white;
+    font-size: 14px;
+    border: none !important;
+
+    .item-inner {
+        border: none !important;
+    }
+
+    ion-label {
+        flex: 1 0;
+        color: #CCCCCC;
+    }
+}
+
+.custom-back-button
+{
+    background-color: transparent;
+    padding: 0;
+    width: 50px;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.config-title-menu-col
+{
+    color: white;
+    font-size: 20px;
+    padding-left: 16px;
+}
+
+.back-button-col
+{
+    max-width: 50px;
+}
+
+.device-configure-modal-container .section-col-container
+{
+    background-color: #535353;
+}
+
+.device-configure-modal-container .hostname-input-wrapper
+{
+    max-width: 60%;
+    width: 140px;
+}
+
+.device-configure-modal-container .set-white-font
+{
+    color: white;
+}
+
+.device-configure-modal-container .configure-button
+{
+    color: white;
+}
+
+.section-list
+{
+    margin: 0;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    border-bottom: solid black 1px;
+    border-top: solid #686868 1px;
+    max-width: 500px;
+}
+
+.configure-item-wrapper
+{
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+    border-top: solid black 1px;
+}
+
+.device-configure-modal-container .done-button
+{
+    margin-right: 0;
+}
+
+.device-configure-modal-container .nav-button-wrapper
+{
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
+
+.device-configure-modal-container .done-button-container
+{
+    width: 100%;
+    max-width: 500px;
+}
+
+.device-configure-modal-container .section-col
+{
+    min-width: 250px;
+    padding-right: 0px;
+    max-width: 520px;
+}
+
+.device-configure-modal-container .dropdown-popover-item-right .dropdown-popover-container .popover-button
+{
+    height: 25px;
+}
+
+.device-configure-modal-container .dropdown-popover-item-right
+{
+    min-width: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    dropdown-popover {
+        width: 100%;
+        .dropdown-select {
+            cursor: pointer;
+            height: 25px;
+        }
+    }
+}
+
+.device-configure-modal-container .invalid-enumeration {
+    dropdown-popover {
+        width: 80%;
+    }
+}
+
+.device-configure-modal-container .alert-button 
+{
+    font-size: 10px;
+    height: 25px;
+    min-width: 26px;
+    margin: 0px 0px 0px 2px;
+}
+
+.list-header
+{
+    background-color: #535353 !important;
+    color: white !important;
+    font-size: 14px !important;
+    font-weight: 600;
+    text-align: center;
+    border: none !important;
+
+    ion-label {
+        margin-bottom: 0;
+    }
+}
+
+.device-configure-modal-container .first-item.item:first-child,
+{
+    border-top: none;
+}
+
+.device-configure-modal-container .item-button
+{
+    font-size: 10px;
+    margin: 0;
+    margin-right: 8px;
+    min-width: 104px;
+}
+
+.item-content-right
+{
+    color: #CCCCCC;
+    max-width: 70%;
+}
+
+.device-configure-modal-container .section-header
+{
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.device-configure-modal-container .custom-padding
+{
+    padding-top: 1px;
+    padding-left: 16px;
+}
+
+.device-configure-modal-container .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+    border-bottom-color: #dedede;
+    box-shadow: none;
+}

@@ -1,0 +1,22 @@
+<div class="bode-component-wrapper">
+    <div class="bode-component-container">
+        <digilent-chart #bodePlot [flotOptions]="bodePlotOptions" chartId="bodePlot" (chartLoad)="plotLoaded()"></digilent-chart>
+    </div>
+    <div class="button-container">
+        <div>
+            <button ion-button class="chart-button disable-hover" (tap)="autoscaleAllAxes()" [tooltip]="tooltipService.getTooltip('chartAutoscale').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                <img class="button-side-svg" src="assets/img/fullscreen.svg" />
+            </button>
+        </div>
+        <div>
+            <button ion-button class="chart-button disable-hover" (tap)="openCalibrationModal()" [tooltip]="tooltipService.getTooltip('bodeCalibrate').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                <img class="button-side-svg" src="assets/img/calibrate.svg" />
+            </button>
+        </div>
+        <div>
+            <button ion-button class="chart-button disable-hover" [disabled]="bodeDataContainer[0].data.length < 1" (tap)="openExportPop($event)" [tooltip]="tooltipService.getTooltip('chartSettings').message" [tooltipAnimation]="true" tooltipPlacement="left">
+                <img class="button-side-svg" src="assets/img/download.svg" />
+            </button>
+        </div>
+    </div>
+</div>

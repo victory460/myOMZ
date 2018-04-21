@@ -1,0 +1,59 @@
+.cursor-modal-container
+{
+    /*position: absolute;            
+    top: 50%;      
+    left: 50%;                  
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    width: 100%;*/
+}
+
+.cursor-modal-list
+{
+    background-color: #535353;
+    margin: 0;
+}
+
+.cursor-modal-container ion-list > .item:last-child {
+    border-bottom: solid #535353 1px !important;
+}
+
+.cursor-modal-container .cursor-modal-item
+{
+    background-color: #535353 !important;
+    color: white;
+    border: none !important;
+    font-size: 14px;
+    .item-inner {
+        border: none !important;
+        .input-wrapper {
+            ion-label {
+                margin: 4px 8px 16px 0;
+            }
+        }
+    }
+}
+
+.cursor-modal-container .cursor-modal-button
+{
+    color: #CCCCCC;
+    width: 98%;
+    background-color: #3A3A3A;
+    border: solid black 1px;
+    border-radius: 0px;
+    .button-inner
+    {
+        text-transform: none;
+        justify-content: space-between;
+    }
+}
+
+.cursor-modal-container .close-buttons
+{
+    margin: 4px 0px 4px 0px;
+
+}
+
+.cursor-modal-container .item .item-inner {
+    border-bottom: solid black 1px;
+}

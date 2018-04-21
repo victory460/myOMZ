@@ -1,0 +1,215 @@
+.chart-component-wrapper chart 
+{
+    display: block;
+    position: relative;
+    height: 100%;
+    //height: 75%;
+}
+
+.chart-component-wrapper
+{
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flex;
+
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column; 
+    
+    // position: relative;
+    // left: 516px;
+
+
+    // flex-direction: row;
+    // -webkit-flex-direction: row;
+    // -ms-flex-direction: row; 
+
+    // width: 100%;
+    // height: 100%;
+   //justify-content:flex-end;
+  //  flex-wrap:wrap;
+}
+// 图表的样式
+.chart-component-wrapper .chart-container-container 
+{
+   position: relative;  //为了子元素的absolute布局
+   width: 600px;
+   height: 400px;
+    // flex: 1 1 400px;
+    // flex: 1 1 auto;
+    // -webkit-flex: 1 1 400px;
+    // -ms-flex: 1 1 400px; 
+
+    // left:449px;//@xww
+}
+
+.chart-component-wrapper .align-trigger
+{
+    transform: rotate(90deg);
+}
+
+.chart-component-wrapper .chart-bottom-container
+{
+    position: relative;
+    left: 438px;
+    flex: 0 0 auto;
+}
+
+.chart-component-wrapper .chart-component-container-div
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.chart-component-wrapper .fft-component-container
+{
+    display: block;
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+    overflow: hidden;
+    min-height: 0.1px;
+}
+
+.chart-container-container .chart-button-container
+{
+    position: absolute;
+    top: 11px;
+    right: 0;
+    width: 25px;
+    height: 200px;
+    max-height: calc(100% - 11px);
+    z-index: 5;
+    overflow: visible;
+}
+
+.chart-container-container .chart-button-container::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.chart-container-container .chart-button-container::-webkit-scrollbar-thumb {
+    background: #4487BA;
+}
+
+.pinoutPopover .popover-content
+{
+    width: 480px !important;
+    max-width: 100%;
+}
+
+.chart-component-wrapper .chart-button
+{
+    margin: 0;
+    font-size: 8px;
+    height: 25px;
+    width: 25px;
+    background-color: #535353;
+    border: solid black 1px;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 4px;
+}
+
+.chart-component-wrapper .chart-button:hover
+{
+    border: solid white 1px;
+}
+
+.timeline-wrapper 
+{
+    display: block;
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+.timeline-wrapper chart 
+{
+    display: block;
+    position: relative;
+    height: 100%;
+}
+
+.chart-info
+{
+    background-color: #535353;
+    width: 160px;//@xww
+}
+
+.chart-info .info-col
+{
+    padding: 1px;
+    display: inline-block;
+}
+
+.chart-info .cursor-info-col
+{
+    padding: 1px;
+    color: white;
+    font-size: 10px;
+}
+
+.chart-info-container
+{
+    flex: 0 0 26px;
+    -webkit-flex: 0 0 26px;
+    -ms-flex: 0 0 26px;
+
+    width: 100%;
+    background-color: #535353;
+}
+
+.chart-component-wrapper .chart-button-container .tooltip.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -5px;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #535353;
+}
+
+.chart-component-wrapper .chart-button-container .tooltip-inner {
+    max-width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    background-color: #535353;
+    border-radius: 4px;
+}
+
+.flotTip
+{
+    border-radius: 0px !important;
+    border-width: 2px !important;
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 12px !important;
+    color: black !important;
+}
+
+//Remove text from collapse buttons also this is cool
+@media screen and (max-width: 1200px) {
+    .chart-component-wrapper .collapse-button {
+        display: none;
+    }
+    .chart-component-wrapper .text-button-side {
+        margin-top: 0.1rem;
+        margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
+        margin-left: 0.1rem;
+        font-size: 8px;
+        height: 25px;
+        background-color: #535353;
+        border: solid black 1px;
+        border-radius: 0px;
+        min-width: 0px;
+        padding: 0;
+        width: 26px;
+    }
+    .chart-component-wrapper .text-button-side[icon-right] .button-inner img {
+        margin: 0;
+    }
+}

@@ -1,0 +1,107 @@
+<div class="keith-container" [ngClass]="{'show-keith': showKeith}" text-center>
+    <div class="keith-img-wrapper">
+        <img class="keith-img" src="assets/img/keith.svg">
+    </div>
+</div>
+
+
+<ion-content class="settings-body">
+
+    <div>
+        <ion-row>
+            <ion-col class="back-button-col" center>
+                <button ion-button class="custom-back-button disable-hover" (click)="done()">
+                    <img class="custom-image-button" src="assets/img/arrow-back.svg">
+                </button>
+            </ion-col>
+            <ion-col center class="config-title-menu-col">
+                Settings
+            </ion-col>
+        </ion-row>
+    </div>
+    <div text-center>
+        <div class="configure-item-wrapper">
+            <ion-list class="section-list">
+                <ion-item-divider class="list-header">Chart Hotkeys</ion-item-divider>
+                <ion-item class="configure-item">
+                    <ion-label>Zoom On Center</ion-label>
+                    <div item-right class="item-content-right">Mousewheel</div>
+                </ion-item>
+                <ion-item class="configure-item">
+                    <ion-label>Zoom On Mouse</ion-label>
+                    <div item-right class="item-content-right">Ctrl + Mousewheel</div>
+                </ion-item>
+                <ion-item class="configure-item">
+                    <ion-label>Highlight Area And Zoom</ion-label>
+                    <div item-right class="item-content-right">MButton And Drag</div>
+                </ion-item>
+                <ion-item class="configure-item">
+                    <ion-label>Change Volts/Div</ion-label>
+                    <div item-right class="item-content-right">Shift + Mousewheel</div>
+                </ion-item>
+                <ion-item class="configure-item">
+                    <ion-label>Vertical Pan</ion-label>
+                    <div item-right class="item-content-right">Shift + Click And Drag</div>
+                </ion-item>
+            </ion-list>
+                <button ion-button icon-right clear class="advanced-button" (tap)="toggleAdvancedSettings()">
+                    Advanced
+                    <div [@rotate]="showAdvancedSettings" class="rotate-image-container">
+                        <img class="custom-image-button" src="assets/img/arrow-dropdown-white.svg">
+                    </div>
+                </button>
+                <div *ngIf="showAdvancedSettings" class="configure-item-wrapper">
+                    <ion-list class="section-list">
+                        <ion-item-divider class="list-header">App Logging</ion-item-divider>
+                        <ion-item class="configure-item only-button-item">
+                            <ion-label>Change Logging Behavior</ion-label>
+                            <div item-right>
+                                <button ion-button class="text-button-side item-button disable-hover" (click)="changeConsoleLog($event)">Change Console Log</button>
+                            </div>
+                        </ion-item>
+                        <ion-item class="configure-item only-button-item">
+                            <ion-label>Export Log</ion-label>
+                            <div item-right>
+                                <button ion-button class="text-button-side item-button disable-hover" (click)="exportLogFile()">Export Log</button>
+                            </div>
+                        </ion-item>
+                        <ion-item class="configure-item only-button-item">
+                            <ion-label>Clear Local App Log</ion-label>
+                            <div item-right>
+                                <button ion-button class="text-button-side item-button disable-hover" (click)="clearAppLog()">Clear App Log</button>
+                            </div>
+                        </ion-item>
+                        <ion-item class="configure-item only-button-item">
+                            <ion-label>Http Timeout</ion-label>
+                            <div item-right class="timeout-container">
+                                <input class="custom-input" step="any" [ngModel]="timeout | unitFormat:'sec'" (focusout)="inputLeave($event)" (keypress)="checkForEnter($event)" />
+                                <button ion-button class="text-button-side item-button disable-hover" [disabled]="timeout * 1000 === currentTimeout" (click)="setTimeout()">Set</button>
+                            </div>
+                        </ion-item>
+                        <ion-item class="configure-item">
+                            <ion-label>Use Dev Firmware Builds</ion-label>
+                            <ion-toggle [(ngModel)]="settingsService.useDevBuilds" (ngModelChange)="saveDevBuilds($event)"></ion-toggle>
+                        </ion-item>
+                    </ion-list>
+                </div>
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer (tap)="keithifyMeCaptain()">
+    <ion-toolbar>
+        <ion-row>
+            <ion-col center>
+                Waveforms Live Version: {{settingsService.wflVersion}}
+            </ion-col>
+            <ion-col center>
+                <ion-row *ngFor="let info of currentSelectedDeviceInfoArray, let i = index;">
+                    <ion-col>
+                        {{i === 1 ? 'Address: ' : ''}} {{info}}
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>
