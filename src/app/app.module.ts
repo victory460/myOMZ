@@ -12,8 +12,6 @@ import { BodeModalPageModule } from '../pages/bode-modal/bode-modal.module';
 //Services
 import { CommandUtilityService } from '../services/device/command-utility.service';
 
-import {AnalogFilterModule} from "../pages/analog-filter/analog-filter.module";
-
 @NgModule({
     declarations: [
         MyApp,
@@ -22,7 +20,6 @@ import {AnalogFilterModule} from "../pages/analog-filter/analog-filter.module";
         CoreModule,
         SettingsModule,
         InstrumentPanelModule,
-        AnalogFilterModule,
         DeviceManagerPageModule,
         BodePageModule,
         BodeModalPageModule,
