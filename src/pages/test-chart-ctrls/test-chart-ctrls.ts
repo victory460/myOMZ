@@ -19,6 +19,7 @@ import { TooltipService } from '../../services/tooltip/tooltip.service';
 import { PreviousLaSettings, PreviousOscSettings, PreviousTrigSettings } from './test-chart-ctrls.interface';
 
 @Component({
+    selector: 'page-test-chart-ctrls',
     templateUrl: 'test-chart-ctrls.html'
 })
 
@@ -71,7 +72,7 @@ export class TestChartCtrlsPage {
     //TODO: REMOVE?
     public currentSamplingFrequencies: number[] = [];
 
-    
+
     public isShowVedio;
 
     public imgSrc;
@@ -518,7 +519,7 @@ export class TestChartCtrlsPage {
         this.controlsVisible = !this.controlsVisible;
     }
 
-    //Toggle bot controls 
+    //Toggle bot controls
     toggleBotControls() {
         this.botVisible = !this.botVisible;
     }
@@ -1216,7 +1217,7 @@ export class TestChartCtrlsPage {
             this.gpioComponent.setGpioCh(1,1);
             // setGpioCh
         }
-       
+
         console.log("replaceRes");
       //  alert("replaceRes");
     }

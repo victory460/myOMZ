@@ -1,5 +1,5 @@
-
-//NEW
+page-mcu-expt{
+    //NEW
 .chart-page-container
 {
     //background-color: #535353;
@@ -17,6 +17,8 @@
     color: #EEEEEE;
     font-size: 18px;
     min-height: 100%;
+    font-family:STKaiti;
+    background-image:url(../../assets/img/aerbeisi.jpg) ;
 }
 .chaolink:link
 {
@@ -39,15 +41,15 @@
 
 .hide {  display:none; }
 
-.chart-page-container ion-col
-{
-    background-color: #535353;
-}
-
-.chart-page-container ion-row
-{
-    background-color: #535353;
-}
+//.chart-page-container ion-col
+//{
+//    background-color: #535353;
+//}
+//
+//.chart-page-container ion-row
+//{
+//    background-color: #535353;
+//}
 
 //Top
 
@@ -72,7 +74,7 @@
     //    display:reflective;
     //    top: 20px;
     font-size: 30px;
-    color: #978df1;
+    color: #ffff8d;
 
 }
 .chart-page-container .top-bar-container .inner-ctrls
@@ -256,4 +258,5 @@
     width: 100%;
     font-weight: 700;
     color: #111111;
+}
 }

@@ -288,7 +288,7 @@ export class DeviceManagerPage {
                 }
               },
               "ipAddress": "http://localhost:42135 - COM9",
-              "hostname": "单片机实验频道",
+              "hostname": "新时代ARM-MCU实验平台",
               "bridge": true,
               "deviceBridgeAddress": "http://localhost:42135",
               "connectedDeviceAddress": "COM9",
@@ -1523,7 +1523,7 @@ export class DeviceManagerPage {
 
 
                   break;
-                 // case "单片机实验频道":
+                 // case "新时代ARM-MCU实验平台":
                  case "Simulated OpenScope MZ":
                   console.log("mcu");
                       this.navCtrl.setRoot(McuExptPage, {
