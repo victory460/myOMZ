@@ -768,7 +768,7 @@ export class DeviceManagerPage {
 
         //下面注释掉的是从客户端本地存储中获取值再填充device，静态的写法就是直接写在上面，增加一个this.devices[]
         //注释掉后，刷新页面后就没有保存的device值了
-        this.storage.getData('savedDevices').then((data) => { 
+        this.storage.getData('savedDevices').then((data) => {
             if (data !== null) {
                 this.devices = JSON.parse(data);
                 this.getFirmwareVersionsForDevices();
@@ -891,7 +891,7 @@ export class DeviceManagerPage {
             if (data.option === 'Remove') {
                 console.log(this.devices);
                 console.log(arrayIndex);
-                
+
                 this.agentReleaseActiveDevice(this.devices[arrayIndex]);
                 this.devices.splice(arrayIndex, 1);
                 this.storage.saveData('savedDevices', JSON.stringify(this.devices));
@@ -1496,7 +1496,7 @@ export class DeviceManagerPage {
     connectToDevice(deviceIndex: number) {
         // @xww
         console.log(this.devices);//先调试把这个值获取到，再写成静态的，this.device是一个数组，里面是json对象  （借助于对比软件），里面的键值的意义，可以参考通信协议等
-       
+
        //如果是仿真的走这个if，没有板子的时候可以先用这个做page的临时跳转，再调试相关的页面
         if (this.devices[deviceIndex].ipAddress === 'local') {
             this.deviceManagerService.addDeviceFromDescriptor('local', { device: [this.devices[deviceIndex].deviceDescriptor] });
@@ -1505,20 +1505,20 @@ export class DeviceManagerPage {
              //switch deviceIndex或者this.devices[deviceIndex].hostname后 进行不同的navCtrl 页面跳转
              switch(this.devices[deviceIndex].hostname)
              {
-                  case "同相比例":   
+                  case "同相比例":
                   console.log("tongxiang");
                   this.navCtrl.setRoot(TestChartCtrlsPage, {
                     tutorialMode: this.tutorialMode
                 });
                   break;
-                  case "滤波器实验":   
-                  console.log("fanxiang");
+                  case "滤波器实验":
+                  console.log("lvbo");
 
 
                   break;
-                  case "单片机实验频道":   
-                  console.log("fanxiang");
-                   
+                  case "单片机实验频道":
+                  console.log("mcu");
+
 
                   break;
 
@@ -1527,10 +1527,10 @@ export class DeviceManagerPage {
 
              }
             //   console.log("hello switch");
-     
+
             return;
         }
-       
+
         let loading = this.displayLoading();
         let ipAddress = this.devices[deviceIndex].ipAddress;
         if (this.devices[deviceIndex].bridge) {
@@ -1599,17 +1599,17 @@ export class DeviceManagerPage {
                     .then((data) => {
                         //基于网络实验室的这种应用storage的这种方式（客户端存储）没有什么作用，在构造函数中已经将this.storage.getData屏蔽掉了
                         this.storage.saveData('savedDevices', JSON.stringify(this.devices));
-                       
+
                        //switch deviceIndex或者this.devices[deviceIndex].hostname后 进行不同的navCtrl 页面跳转
                        switch(this.devices[deviceIndex].hostname)
                        {
-                            case "同相比例":   
+                            case "同相比例":
                             console.log("tongxiang");
                             this.navCtrl.setRoot(TestChartCtrlsPage, {
                                 tutorialMode: this.tutorialMode
                             });
                             break;
-                            case "反相比例":   
+                            case "反相比例":
                             console.log("fanxiang");
 
 
