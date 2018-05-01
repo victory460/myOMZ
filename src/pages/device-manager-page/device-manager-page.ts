@@ -3,6 +3,7 @@ import { PopoverController, App, NavController, ModalController, Platform, Alert
 
 //Pages
 import { TestChartCtrlsPage } from '../../pages/test-chart-ctrls/test-chart-ctrls';
+import { AnalogFilterPage } from '../../pages/analog-filter/analog-filter';
 import { DeviceConfigureModal } from '../../pages/device-configure-modal/device-configure-modal';
 import { LoadFirmwarePage } from '../../pages/load-firmware/load-firmware';
 import { UpdateFirmwarePage } from '../../pages/update-firmware/update-firmware';
@@ -20,6 +21,7 @@ import { StorageService } from '../../services/storage/storage.service';
 import { SettingsService } from '../../services/settings/settings.service';
 import { ToastService } from '../../services/toast/toast.service';
 import { TooltipService } from '../../services/tooltip/tooltip.service';
+
 
 interface tooltipInterface {
     addADevice: string,
@@ -1507,9 +1509,13 @@ export class DeviceManagerPage {
              {
                   case "同相比例":
                   console.log("tongxiang");
-                  this.navCtrl.setRoot(TestChartCtrlsPage, {
+                  this.navCtrl.setRoot(AnalogFilterPage, {
                     tutorialMode: this.tutorialMode
                 });
+
+                  // this.navCtrl.setRoot(TestChartCtrlsPage, {
+                  //     tutorialMode: this.tutorialMode
+                  // });
                   break;
                   case "滤波器实验":
                   console.log("lvbo");

@@ -6,11 +6,13 @@ import { CoreModule } from './core/core.module';
 import { SettingsModule } from '../pages/settings/settings.module';
 import { InstrumentPanelModule } from '../pages/test-chart-ctrls/test-chart-ctrls.module';
 import { DeviceManagerPageModule } from '../pages/device-manager-page/device-manager-page.module';
-import { BodePageModule } from '../pages/bode/bode.module'; 
+import { BodePageModule } from '../pages/bode/bode.module';
 import { BodeModalPageModule } from '../pages/bode-modal/bode-modal.module';
 
 //Services
 import { CommandUtilityService } from '../services/device/command-utility.service';
+
+import {AnalogFilterModule} from "../pages/analog-filter/analog-filter.module";
 
 @NgModule({
     declarations: [
@@ -20,6 +22,7 @@ import { CommandUtilityService } from '../services/device/command-utility.servic
         CoreModule,
         SettingsModule,
         InstrumentPanelModule,
+        AnalogFilterModule,
         DeviceManagerPageModule,
         BodePageModule,
         BodeModalPageModule,

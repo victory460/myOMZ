@@ -4,6 +4,7 @@ import { StatusBar, Splashscreen } from 'ionic-native';
 
 //Pages
 import { TestChartCtrlsPage } from '../pages/test-chart-ctrls/test-chart-ctrls';
+import { AnalogFilterPage } from '../pages/analog-filter/analog-filter';
 import { SettingsPage } from '../pages/settings/settings';
 import { DeviceManagerPage } from '../pages/device-manager-page/device-manager-page';
 
@@ -39,7 +40,7 @@ export class MyApp {
         if ((this.platform.is('ios') || this.platform.is('android')) && this.platform.is('mobileweb')) {
             this.isMobile = true;
         }
-        
+
         (<any>document).addEventListener("keydown", (event) => {
             if ((event.code === 'KeyS' || event.keyCode === 83) && event.ctrlKey) {
                 event.preventDefault();
@@ -72,7 +73,7 @@ export class MyApp {
         // close the menu when clicking a link from the menu
         this.menu.close();
         // navigate to the new page if it is not the current page
-        if (page.component === TestChartCtrlsPage || page.component === DeviceManagerPage) {
+        if (page.component === TestChartCtrlsPage || page.component === DeviceManagerPage|| page.component === AnalogFilterPage) {
             this.nav.setRoot(page.component);
         }
         else {

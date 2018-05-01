@@ -1,3 +1,263 @@
-page-analog-filter {
+//page-analog-filter {
+//
+//}
 
+
+//NEW
+.chart-page-container
+{
+    //background-color: #535353;
+    /*display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    height: 100%;
+
+    width: 100%;*/
+    color: #EEEEEE;
+    font-size: 18px;
+    min-height: 100%;
+}
+.chaolink:link
+{
+    color:#FF0000;
+    text-decoration:none;
+}
+
+.img-div
+{
+    position: relative;
+
+}
+.abs-re
+{
+    position: relative;
+    top: -220px;
+    left: 232px;
+
+}
+
+.hide {  display:none; }
+
+.chart-page-container ion-col
+{
+    background-color: #535353;
+}
+
+.chart-page-container ion-row
+{
+    background-color: #535353;
+}
+
+//Top
+
+.chart-page-container .top-bar-container
+{
+    height: 63px;
+    z-index: 1;
+}
+
+.chart-page-container .timeline-chart-wrapper
+{
+    height: 10vh;
+    max-height: 52px;
+    min-height: 52px;
+    padding-left: 0px;
+    padding-right: 0px;
+    //  visibility: hidden;
+
+}
+
+.page-title{
+    //    display:reflective;
+    //    top: 20px;
+    font-size: 30px;
+    color: #978df1;
+
+}
+.chart-page-container .top-bar-container .inner-ctrls
+{
+    padding-right: 5px;
+    background-color: #535353;
+    z-index: 5;
+    max-width: 234px;
+    padding-left: 5px;
+    position:relative;
+}
+
+.chart-page-container .top-bar-container .buffer-count-container
+{
+    max-width: 42px;
+    padding: 0 0 0 0;
+}
+
+//Center
+
+.chart-page-container .center-container
+{
+    position:absolute;
+    top:63px;
+    bottom:0;
+    left:0;
+    right:0;
+    overflow-y:auto;
+}
+
+.chart-page-container .center-container .chart-wrapper
+{
+    height: 100%;
+}
+
+.chart-page-container .center-container .controls-wrapper
+{
+    max-width: 240px;
+    min-width: 232px;
+    padding: 0;
+
+    overflow-y: auto;
+    height: 100%;
+
+    background-color: #535353;
+    border-left: solid black 1px;
+}
+
+.chart-page-container .tutorial-mode-button
+{
+    bottom: 32px;
+    right: 0px;
+}
+
+.chart-page-container .custom-col
+{
+    padding: 0;
+    height: 60%;
+    // width:  100%; //宽度在组件的内部类里面进行了更改了
+    position: relative;
+}
+
+.chart-page-container .move-left
+{
+    max-width: 56px;
+}
+
+.chart-page-container .remove-icon-padding
+{
+    padding: 0;
+}
+
+.chart-page-container .move-left .open-menu-button
+{
+    background-color: #535353;
+    color: white;
+    border-radius: 0px;
+    vertical-align: middle;
+    margin: 0 0 0 0;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.chart-page-container .move-left .open-menu-button:hover
+{
+    background-color: #686868;
+}
+
+.chart-page-container .red-stop
+{
+    color: red;
+}
+
+.chart-page-container .main-button
+{
+    color: #3A3A3A;
+    background-color: #EEEEEE;
+    font-size: 12px;
+    font-weight: 600;
+    img {
+        width: 20px;
+    }
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.chart-page-container .trigger-indicator
+{
+    color: #CCCCCC;
+}
+
+//Disables scroll for all pages
+.instrument-panel-content .scroll-content {
+    overflow: hidden;
+}
+
+
+.chart-page-container .chart-tutorial-tooltip
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #535353;
+    width: 250px;
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 4px;
+}
+
+.chart-page-container .end-tutorial-display
+{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #535353;
+    width: 250px;
+    color: white;
+    padding: 8px 16px 8px 16px;
+    border-radius: 4px;
+}
+
+//Remove text from collapse buttons also this is cool
+@media screen and (max-width: 500px) {
+    .chart-page-container .collapse-button {
+        display: none;
+    }
+    .chart-page-container .top-bar-container .inner-ctrls .text-button-side {
+        margin-top: 0.1rem;
+        margin-right: 0.1rem;
+        margin-bottom: 0.1rem;
+        margin-left: 0.1rem;
+        font-size: 8px;
+        height: 25px;
+        border: solid black 1px;
+        border-radius: 0px;
+        min-width: 0px;
+    }
+    .chart-page-container .top-bar-container .inner-ctrls
+    {
+        max-width: 110px;
+    }
+    .chart-page-container [icon-right] ion-icon {
+        padding-left: 1px;
+    }
+    .chart-page-container .text-button-side[icon-right] .button-inner img {
+        margin: 0;
+    }
+}
+
+.card-pic{
+    position: relative;
+
+}
+.card-pic .card-title{
+    position: absolute;
+    top: 91%;
+    right: -193px;
+    // font-size: 2em;
+    width: 100%;
+    font-weight: 700;
+    color: #111111;
 }
