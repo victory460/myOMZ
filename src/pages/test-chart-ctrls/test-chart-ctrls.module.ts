@@ -18,9 +18,11 @@ import { LaPopover } from '../../components/la-popover/la-popover.component';
 import { ChartAnnotationComponent } from '../../components/chart-annotation/chart-annotation.component';
 import {AnalogFilterPage} from "../analog-filter/analog-filter";
 import {McuExptPage} from "../mcu-expt/mcu-expt";
+import {FileUploadModule} from "ng2-file-upload";
 
 @NgModule({
     imports: [
+        FileUploadModule,
         SharedModule,
         IonicModule.forRoot(TestChartCtrlsPage),
         IonicModule.forRoot(AnalogFilterPage),
@@ -32,6 +34,7 @@ import {McuExptPage} from "../mcu-expt/mcu-expt";
         IonicModule.forRoot(ChartAnnotationComponent)
     ],
     declarations: [
+
         PinoutPopover,
         LaPopover,
         TestChartCtrlsPage,

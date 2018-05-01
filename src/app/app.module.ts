@@ -11,13 +11,14 @@ import { BodeModalPageModule } from '../pages/bode-modal/bode-modal.module';
 
 //Services
 import { CommandUtilityService } from '../services/device/command-utility.service';
-
+import { FileUploadModule } from "ng2-file-upload";
 @NgModule({
     declarations: [
         MyApp,
     ],
     imports: [
         CoreModule,
+        FileUploadModule,
         SettingsModule,
         InstrumentPanelModule,
         DeviceManagerPageModule,

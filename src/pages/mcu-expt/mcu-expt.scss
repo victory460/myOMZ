@@ -18,7 +18,8 @@ page-mcu-expt{
     font-size: 18px;
     min-height: 100%;
     font-family:STKaiti;
-    background-image:url(../../assets/img/aerbeisi.jpg) ;
+    background: #7e93a7;
+    //background-image:url(../../assets/img/aerbeisi.jpg) ;
 }
 .chaolink:link
 {
@@ -259,4 +260,12 @@ page-mcu-expt{
     font-weight: 700;
     color: #111111;
 }
+
+    .my-drop-zone { border: dotted 3px lightgray; }
+    .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+    .another-file-over-class { border: dotted 3px green; }
+
+
+
+
 }
