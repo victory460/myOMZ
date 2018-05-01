@@ -17,12 +17,14 @@ import { PinoutPopover } from '../../components/pinout-popover/pinout-popover.co
 import { LaPopover } from '../../components/la-popover/la-popover.component';
 import { ChartAnnotationComponent } from '../../components/chart-annotation/chart-annotation.component';
 import {AnalogFilterPage} from "../analog-filter/analog-filter";
+import {McuExptPage} from "../mcu-expt/mcu-expt";
 
 @NgModule({
     imports: [
         SharedModule,
         IonicModule.forRoot(TestChartCtrlsPage),
         IonicModule.forRoot(AnalogFilterPage),
+        IonicModule.forRoot(McuExptPage),
         IonicModule.forRoot(ModalCursorPage),
         IonicModule.forRoot(MathModalPage),
         IonicModule.forRoot(PinoutPopover),
@@ -34,6 +36,7 @@ import {AnalogFilterPage} from "../analog-filter/analog-filter";
         LaPopover,
         TestChartCtrlsPage,
         AnalogFilterPage,
+        McuExptPage,
         ModalCursorPage,
         MathModalPage,
         SilverNeedleChart,
@@ -46,6 +49,6 @@ import {AnalogFilterPage} from "../analog-filter/analog-filter";
         DcSupplyComponent,
         ChartAnnotationComponent
     ],
-    exports: [TestChartCtrlsPage,AnalogFilterPage]
+    exports: [TestChartCtrlsPage,AnalogFilterPage,McuExptPage]
 })
 export class InstrumentPanelModule { }

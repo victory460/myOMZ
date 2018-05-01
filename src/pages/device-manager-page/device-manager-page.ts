@@ -21,6 +21,7 @@ import { StorageService } from '../../services/storage/storage.service';
 import { SettingsService } from '../../services/settings/settings.service';
 import { ToastService } from '../../services/toast/toast.service';
 import { TooltipService } from '../../services/tooltip/tooltip.service';
+import {McuExptPage} from "../mcu-expt/mcu-expt";
 
 
 interface tooltipInterface {
@@ -496,10 +497,10 @@ export class DeviceManagerPage {
     "connectedDeviceAddress": null,
     "outdatedFirmware": false
   }
-     ]
+  ]
 
      //下面这个是仿真的simulated
-        //[
+
             // {
             //   "deviceDescriptor": {
             //     "command": "enumerate",
@@ -739,7 +740,7 @@ export class DeviceManagerPage {
             //     "connectedDeviceAddress": null,
             //     "outdatedFirmware": false
             //   }
-         // ];
+
         console.log('tab1 constructor');
         this.app = _app;
         this.loadingCtrl = _loadingCtrl;
@@ -1522,9 +1523,12 @@ export class DeviceManagerPage {
 
 
                   break;
-                  case "单片机实验频道":
+                 // case "单片机实验频道":
+                 case "Simulated OpenScope MZ":
                   console.log("mcu");
-
+                      this.navCtrl.setRoot(McuExptPage, {
+                          tutorialMode: this.tutorialMode
+                      });
 
                   break;
 

@@ -11,6 +11,7 @@ import { DeviceManagerPage } from '../pages/device-manager-page/device-manager-p
 //Services
 import { SettingsService } from '../services/settings/settings.service';
 import { DeviceManagerService } from 'dip-angular2/services';
+import {McuExptPage} from "../pages/mcu-expt/mcu-expt";
 
 @Component({
     templateUrl: 'app.html'
@@ -73,7 +74,7 @@ export class MyApp {
         // close the menu when clicking a link from the menu
         this.menu.close();
         // navigate to the new page if it is not the current page
-        if (page.component === TestChartCtrlsPage || page.component === DeviceManagerPage|| page.component === AnalogFilterPage) {
+        if (page.component === TestChartCtrlsPage || page.component === DeviceManagerPage|| page.component === AnalogFilterPage || page.component === McuExptPage) {
             this.nav.setRoot(page.component);
         }
         else {
