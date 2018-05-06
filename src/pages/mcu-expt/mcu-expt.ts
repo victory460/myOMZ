@@ -16,7 +16,7 @@ const URL = 'http://192.168.31.99:3000/api/';
   templateUrl: 'mcu-expt.html'
 })
 export class McuExptPage {
-
+    public isShowVedio;
   constructor(public navCtrl: NavController) {}
 
   ionViewDidLoad() {
@@ -33,6 +33,14 @@ export class McuExptPage {
 
     public fileOverAnother(e:any):void {
         this.hasAnotherDropZoneOver = e;
+    }
+
+
+    toggleShowVedio()
+    {
+        this.isShowVedio=!this.isShowVedio;
+        console.log("isShowVedio"+this.isShowVedio);
+
     }
 
 }

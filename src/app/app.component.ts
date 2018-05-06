@@ -33,8 +33,8 @@ export class MyApp {
         this.initializeApp();
         // set our app's pages
         this.pages = [
-            { title: 'Device Manager', component: DeviceManagerPage },
-            { title: 'Settings', component: SettingsPage } //可以尝试再增加一些菜单项
+            { title: '我爱实验', component: DeviceManagerPage },
+            // { title: 'Settings', component: SettingsPage } //可以尝试再增加一些菜单项，应该是在app.html里面加菜单更准确一点
         ];
         this.settingsService = _settingsService;
         //this.settingsService.changeConsoleLog('None');
@@ -60,13 +60,13 @@ export class MyApp {
 
     toFeedBack() {
         this.menu.close();
-        let openTab = window.open('https://forum.digilentinc.com/forum/30-waveforms-live-and-openscope-feedback/', '_blank');
+        let openTab = window.open('https://www.baidu.com/', '_blank');
         openTab.location;
     }
 
     toReference() {
         this.menu.close();
-        let openTab = window.open('https://reference.digilentinc.com/reference/software/waveforms-live/start', '_blank');
+        let openTab = window.open('https://www.baidu.com/', '_blank');
         openTab.location;
     }
 

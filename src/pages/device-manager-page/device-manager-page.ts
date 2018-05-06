@@ -1347,7 +1347,8 @@ export class DeviceManagerPage {
                         {
                             deviceDescriptor: success.device[0],
                             ipAddress: 'local',
-                            hostname: 'Simulated ' + this.selectedSimulatedDevice,
+                            // hostname: 'Simulated ' + this.selectedSimulatedDevice,
+                            hostname: '新实验台',
                             bridge: false,
                             deviceBridgeAddress: null,
                             connectedDeviceAddress: null,
@@ -1524,7 +1525,7 @@ export class DeviceManagerPage {
 
                   break;
                  // case "新时代ARM-MCU实验平台":
-                 case "Simulated OpenScope MZ":
+                 case "新实验台":
                   console.log("mcu");
                       this.navCtrl.setRoot(McuExptPage, {
                           tutorialMode: this.tutorialMode
