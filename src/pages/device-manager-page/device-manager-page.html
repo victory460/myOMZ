@@ -33,9 +33,9 @@
     </div> -->
 
 <!-- 调试用，之后可以把这个删除掉 ngif -->
-    <div class="align-right"> 
+    <div class="align-right">
         <button ion-button icon-right color ='light' (tap)="toggleAddDevMenu()"  >
-                ----
+                【NNU】
             <div [@rotate]="showDevMenu" class="rotate-image-container">
                 <img src="assets/img/arrow-dropdown-white.svg" class="custom-image-button">
             </div>
@@ -51,15 +51,15 @@
                 </button>
             </div>
             <div>
-                <button icon-left ion-button class="devicetype-button disable-hover" (click)="setConnectionType('simulated')" [tooltip]="tooltipMessages['simulatedButton']" 
-                    [forceShow]="tutorialStage===1 && tutorialMode" [tooltipAnimation]="true" tooltipPlacement="bottom" 
+                <button icon-left ion-button class="devicetype-button disable-hover" (click)="setConnectionType('simulated')" [tooltip]="tooltipMessages['simulatedButton']"
+                    [forceShow]="tutorialStage===1 && tutorialMode" [tooltipAnimation]="true" tooltipPlacement="bottom"
                     [ngClass]="{'move-feature-to-front':tutorialStage===1 && tutorialMode}">
                     <img class="custom-image-button" src="assets/img/simulated.svg">
                     Simulated
                 </button>
             </div>
             <div>
-                <button icon-left ion-button class="devicetype-button disable-hover" (click)="setConnectionType('agent')" [tooltip]="tooltipMessages['agentButton']" 
+                <button icon-left ion-button class="devicetype-button disable-hover" (click)="setConnectionType('agent')" [tooltip]="tooltipMessages['agentButton']"
                     [forceShow]="tutorialStage===1 && tutorialMode" [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'right' : 'bottom'">
                     <img class="custom-image-button" src="assets/img/agent.svg">
                     Agent
@@ -81,11 +81,11 @@
                                     <ion-label stacked>Hostname / IP</ion-label>
                                     <ion-input [(ngModel)]="addDeviceIp" (keypress)="checkForEnter($event, 'network')"></ion-input>
                                     <div item-right class="connect-button-container">
-                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']"
                                             [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'bottom' : 'left'">
                                             <img class="custom-image-button" src="assets/img/close.svg">
                                         </button>
-                                        <button ion-button class="connect-button disable-hover" (tap)="attemptConnect(addDeviceIp)" [tooltip]="tooltipMessages['addCurrentDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (tap)="attemptConnect(addDeviceIp)" [tooltip]="tooltipMessages['addCurrentDevice']"
                                             [forceShow]="tutorialStage===2 && tutorialMode" [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'right' : 'left'">
                                             <img class="custom-image-button" src="assets/img/add.svg">
                                         </button>
@@ -96,7 +96,7 @@
                     </ion-card>
                 </div>
                                             <!-- 这是仿真类型的按键弹窗 -->
-                <div *ngSwitchCase="'simulated'" text-center>    
+                <div *ngSwitchCase="'simulated'" text-center>
                     <ion-card class="device-manager-card select-device-card">
                         <ion-item class="device-card-item" [ngClass]="{'move-feature-to-front':tutorialStage===2 && tutorialMode}">
                             <div item-left class="item-image-container">
@@ -107,11 +107,11 @@
                                     <div class="custom-ion-label">Simulated Device</div>
                                         <dropdown-popover class="dropdown-popover-selector" [dataArray]="simulatedDevices" (onSelection)="selectSimulatedDevice($event)"></dropdown-popover>
                                     <div item-right class="connect-button-container">
-                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']"
                                             [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'bottom' : 'left'">
                                             <img class="custom-image-button" src="assets/img/close.svg">
                                         </button>
-                                        <button ion-button class="connect-button disable-hover" (tap)="openSimDevice()" [tooltip]="tooltipMessages['addCurrentDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (tap)="openSimDevice()" [tooltip]="tooltipMessages['addCurrentDevice']"
                                             [forceShow]="tutorialStage===2 && tutorialMode" [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'right' : 'left'">
                                             <img class="custom-image-button" src="assets/img/add.svg">
                                         </button>
@@ -134,11 +134,11 @@
                                     <ion-label stacked> Agent</ion-label>
                                     <ion-input [(ngModel)]="deviceBridgeAddress" (keypress)="checkForEnter($event, 'agent')"></ion-input>
                                     <div item-right class="connect-button-container">
-                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (click)="backToChooseDeviceType()" [tooltip]="tooltipMessages['backToAddDevice']"
                                             [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'bottom' : 'left'">
                                             <img class="custom-image-button" src="assets/img/close.svg">
                                         </button>
-                                        <button ion-button class="connect-button disable-hover" (tap)="attemptBridgeConnect(deviceBridgeAddress)" [tooltip]="tooltipMessages['addCurrentDevice']" 
+                                        <button ion-button class="connect-button disable-hover" (tap)="attemptBridgeConnect(deviceBridgeAddress)" [tooltip]="tooltipMessages['addCurrentDevice']"
                                             [forceShow]="tutorialStage===2 && tutorialMode" [tooltipAnimation]="true" [tooltipPlacement]="tutorialMode ? 'right' : 'left'">
                                             <img class="custom-image-button" src="assets/img/add.svg">
                                         </button>

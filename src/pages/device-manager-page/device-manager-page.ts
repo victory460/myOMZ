@@ -490,7 +490,7 @@ export class DeviceManagerPage {
         }
       }
     },
-    "ipAddress": "http://192.168.31.105:80",
+    "ipAddress": "http://192.168.31.106:80",
     "hostname": "同相比例",
     "bridge": false,
     "deviceBridgeAddress": null,
@@ -1524,15 +1524,20 @@ export class DeviceManagerPage {
 
 
                   break;
-                 // case "新时代ARM-MCU实验平台":
-                 case "新实验台":
+                 case "新时代ARM-MCU实验平台":
                   console.log("mcu");
                       this.navCtrl.setRoot(McuExptPage, {
                           tutorialMode: this.tutorialMode
                       });
 
                   break;
+                 case "新实验台":
+                     console.log("mcu");
+                     this.navCtrl.setRoot(McuExptPage, {
+                         tutorialMode: this.tutorialMode
+                     });
 
+                     break;
                   default:
                   console.log("hello switch");
 
@@ -1622,10 +1627,13 @@ export class DeviceManagerPage {
                             break;
                             case "反相比例":
                             console.log("fanxiang");
-
-
                             break;
-
+                           case "新时代ARM-MCU实验平台":
+                               this.navCtrl.setRoot(TestChartCtrlsPage, {
+                                   tutorialMode: this.tutorialMode
+                               });
+                               console.log("fanxiang");
+                               break;
                             default:
                             console.log("hello switch");
 
@@ -1633,9 +1641,9 @@ export class DeviceManagerPage {
                       //   console.log("hello switch");
 
                       //调试一个实验/仪器的时候，先用下面的语句直接跳，做了差不多的时候，再放到上面的switch中进行跳转
-                      this.navCtrl.setRoot(TestChartCtrlsPage, {
-                        tutorialMode: this.tutorialMode
-                    });
+                    //   this.navCtrl.setRoot(TestChartCtrlsPage, {
+                    //     tutorialMode: this.tutorialMode
+                    // });
                     })
                     .catch((e) => {
                         console.log(e);
