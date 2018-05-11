@@ -10,7 +10,7 @@ import { FileUploader } from 'ng2-file-upload';
 
 
 const URL = 'http://192.168.31.99:3000/api/';
-
+// const URL = 'http://localhost:3000/api/';//本地调试
 @Component({
   selector: 'page-mcu-expt',
   templateUrl: 'mcu-expt.html'
