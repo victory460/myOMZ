@@ -65,7 +65,7 @@
                 <ion-col >
                     <button ion-button color="light" text-center><h1>低通滤波器电路</h1> <a class="chaolink" href="http://www.abang.com" target="_blank">下载实验课件</a></button>
 
-                    <div><h3>一、实验目的:</h3><br>掌握滤波原理，明白-------的关系</div>
+                    <div><h3>一、实验目的:</h3><br>掌握低通滤波器的原理，明白输出电压和输入电压之间的关系。</div>
 
                     <div><h3>二、实验原理图：</h3></div>
 
@@ -75,13 +75,18 @@
                         <div class="card-title">图:同相比例放大电路</div>
                     </ion-card> -->
                     <div class="img-div">
-                        <img src="assets/img/tongXiangFangDa.png" alt="同相比例放大图">
-                        <div class="abs-re">
-                            <img [src]="imgSrc"  alt="res10K" (click)="replaceRes()">
-                        </div>
+                        <img src="assets/img/diTongLvBo.png" alt="同相比例放大图">
+            
                     </div>
 
-                    <div><h3>三、实验原理：</h3><br>根据工作在线性放大状态的运放的虚短和虚断特性，可得Vout=（1+R1/R2）*Vin</div>
+                    <div><h3>三、实验原理：</h3><br>
+                        根据运放的特性，可知其传递函数为
+                        A(s)=A_o/(1+s/ω_c )
+                        |A(jω)|=A_o/√(1+(ω/ω_c )^2 )
+                        其中A_o=1+R_f/R_1 ，ω_c=1/RC，由此可以计算出截止频率以及相对应的幅值。
+                        
+                    
+                    </div>
 
 
 
@@ -116,11 +121,16 @@
 
 
                     <div><h3>四、实验步骤:</h3>
-                        <br>1.分别给Vin输入500mV,1000mV,1500mV的输入电压（信号）。
-                        <br>2.分别观察相对应的输出电压值Vout。
-                        <br>3.分别计算每次的Vout/Vin的值，记为Mn。
-                        <br>4.计算（1+R1/R2）的值，并于Mn进行比较。
-                        <br>5.改变R2后重复以上1，2，3，4的步骤。
+                        <h6>
+                        a、给Vi输入±1V频率为200HZ的交流电压（信号）。
+                        </h6>
+                        <h6>
+                        b、观察相对应的输出波形Vo。
+                        </h6>
+                        <h6>
+                        c、将Vi的频率下调后重复以上a、b的步骤，观察Vo波形幅度的变化。
+                        </h6>                 
+                
                     </div>
 
 

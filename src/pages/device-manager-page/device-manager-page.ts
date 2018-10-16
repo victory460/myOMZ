@@ -67,7 +67,7 @@ export class DeviceManagerPage {
 
     public devices: DeviceCardInfo[] = [];
 
-    public simulatedDevices: string[] = ['OpenScope MZ'];
+    public simulatedDevices: string[] = ['ARM-STM32'];
     public deviceConnectionType: string = 'network';
     public showDeviceTypeCard: boolean = true;
 
@@ -1348,7 +1348,7 @@ export class DeviceManagerPage {
                             deviceDescriptor: success.device[0],
                             ipAddress: 'local',
                             // hostname: 'Simulated ' + this.selectedSimulatedDevice,
-                            hostname: '新实验台',
+                            hostname: '新时代ARM-MCU实验平台',
                             bridge: false,
                             deviceBridgeAddress: null,
                             connectedDeviceAddress: null,
@@ -1511,7 +1511,7 @@ export class DeviceManagerPage {
              {
                   case "同相比例":
                   console.log("tongxiang");
-                  this.navCtrl.setRoot(AnalogFilterPage, {
+                  this.navCtrl.setRoot(TestChartCtrlsPage, {
                     tutorialMode: this.tutorialMode
                 });
 
@@ -1519,7 +1519,11 @@ export class DeviceManagerPage {
                   //     tutorialMode: this.tutorialMode
                   // });
                   break;
-                  case "滤波器实验":
+                  case "低通滤波器":
+                  
+                  this.navCtrl.setRoot(AnalogFilterPage, {
+                    tutorialMode: this.tutorialMode
+                });
                   console.log("lvbo");
 
 
@@ -1531,7 +1535,7 @@ export class DeviceManagerPage {
                       });
 
                   break;
-                 case "新实验台":
+                 case "新时代ARM-MCU实验平台":
                      console.log("mcu");
                      this.navCtrl.setRoot(McuExptPage, {
                          tutorialMode: this.tutorialMode
@@ -1633,6 +1637,15 @@ export class DeviceManagerPage {
                                    tutorialMode: this.tutorialMode
                                });
                                console.log("fanxiang");
+                               break;
+                               case "低通滤波器":
+                  
+                               this.navCtrl.setRoot(AnalogFilterPage, {
+                                 tutorialMode: this.tutorialMode
+                             });
+                               console.log("lvbo");
+             
+             
                                break;
                             default:
                             console.log("hello switch");

@@ -1,6 +1,6 @@
 import { App, Platform, NavParams, LoadingController } from 'ionic-angular';
 import { ViewChild, Component } from '@angular/core';
-
+import {Http,Headers} from "@angular/http";
 //Components
 import { SilverNeedleChart } from '../../components/chart/chart.component';
 import { TriggerComponent } from '../../components/trigger/trigger.component';
@@ -71,7 +71,7 @@ export class TestChartCtrlsPage {
     public currentTriggerType: 'rising' | 'falling' | 'off';
     //TODO: REMOVE?
     public currentSamplingFrequencies: number[] = [];
-
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     public isShowVedio;
 
@@ -84,7 +84,8 @@ export class TestChartCtrlsPage {
         _app: App,
         _params: NavParams,
         _platform: Platform,
-        public loadingCtrl: LoadingController
+        public loadingCtrl: LoadingController,
+        private http:Http
     ) {
         this.toastService = _toastService;
         this.tooltipService = _tooltipService;
@@ -99,6 +100,7 @@ export class TestChartCtrlsPage {
 
         this.imgSrc="assets/img/res10K.png";
         this.isShowVedio=false;
+        this.initTongXiangRelays();
         this.getOscStatus()
             .then(() => {
                 return this.getAwgStatus();
@@ -130,6 +132,20 @@ export class TestChartCtrlsPage {
         console.log(this.deviceManagerService.devices[0]);
     }
 
+
+    initTongXiangRelays() {
+        let experience = {
+            type:'txfd_3/2' //同相放大 3/2倍
+        }
+        this.http.post('http://192.168.31.99:3000/api/doExperiences',
+        JSON.stringify(experience), {headers:this.headers})
+        // .toPromise()
+        .subscribe(function(res){
+            console.log(res.json());
+            },function (params) {
+            console.log("pi-server response is not ok")
+            });
+    }
 
     toggleShowVedio()
     {
@@ -1206,16 +1222,37 @@ export class TestChartCtrlsPage {
 
     replaceRes()
     {
-        if(this.imgSrc=="assets/img/res0K.png")
+        if(this.imgSrc=="assets/img/res5K.png")
         {
             this.imgSrc="assets/img/res10K.png";
-           this.gpioComponent.setGpioCh(1,0);
+        //    this.gpioComponent.setGpioCh(1,0);
+        let experience = {
+            type:'txfd_2' //同相放大 3/2倍
+        }
+        this.http.post('http://192.168.31.99:3000/api/doExperiences',
+        JSON.stringify(experience), {headers:this.headers})
+        // .toPromise()
+        .subscribe(function(res){
+            console.log(res.json());
+            },function (params) {
+            console.log("pi-server response is not ok")
+            });
         }
        else if(this.imgSrc=="assets/img/res10K.png")
         {
-            this.imgSrc="assets/img/res0K.png";
-            this.gpioComponent.setGpioCh(1,1);
-            // setGpioCh
+            this.imgSrc="assets/img/res5K.png";
+            // this.gpioComponent.setGpioCh(1,1);
+            let experience = {
+                type:'txfd_3/2' //同相放大2倍
+            }
+            this.http.post('http://192.168.31.99:3000/api/doExperiences',
+            JSON.stringify(experience), {headers:this.headers})
+            // .toPromise()
+            .subscribe(function(res){
+                console.log(res.json());
+                },function (params) {
+                console.log("pi-server response is not ok")
+                });
         }
 
         console.log("replaceRes");

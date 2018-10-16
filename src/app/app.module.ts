@@ -8,10 +8,11 @@ import { InstrumentPanelModule } from '../pages/test-chart-ctrls/test-chart-ctrl
 import { DeviceManagerPageModule } from '../pages/device-manager-page/device-manager-page.module';
 import { BodePageModule } from '../pages/bode/bode.module';
 import { BodeModalPageModule } from '../pages/bode-modal/bode-modal.module';
-
-//Services
+import { HttpModule} from '@angular/http';
+//Services,
 import { CommandUtilityService } from '../services/device/command-utility.service';
 import { FileUploadModule } from "ng2-file-upload";
+
 @NgModule({
     declarations: [
         MyApp,
@@ -24,6 +25,7 @@ import { FileUploadModule } from "ng2-file-upload";
         DeviceManagerPageModule,
         BodePageModule,
         BodeModalPageModule,
+        HttpModule,
         IonicModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],

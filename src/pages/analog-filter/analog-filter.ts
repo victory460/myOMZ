@@ -5,7 +5,7 @@
 
 import { App, Platform, NavParams, LoadingController } from 'ionic-angular';
 import { ViewChild, Component } from '@angular/core';
-
+import {Http,Headers} from "@angular/http";
 //Components
 import { SilverNeedleChart } from '../../components/chart/chart.component';
 import { TriggerComponent } from '../../components/trigger/trigger.component';
@@ -91,6 +91,7 @@ export class AnalogFilterPage {
     //TODO: REMOVE?
     public currentSamplingFrequencies: number[] = [];
 
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     public isShowVedio;
 
@@ -103,7 +104,8 @@ export class AnalogFilterPage {
         _app: App,
         _params: NavParams,
         _platform: Platform,
-        public loadingCtrl: LoadingController
+        public loadingCtrl: LoadingController,
+        private http:Http
     ) {
         this.toastService = _toastService;
         this.tooltipService = _tooltipService;
@@ -118,6 +120,7 @@ export class AnalogFilterPage {
 
         this.imgSrc="assets/img/res10K.png";
         this.isShowVedio=false;
+        this.initTongXiangRelays();
         this.getOscStatus()
             .then(() => {
                 return this.getAwgStatus();
@@ -149,7 +152,19 @@ export class AnalogFilterPage {
         console.log(this.deviceManagerService.devices[0]);
     }
 
-
+    initTongXiangRelays() {
+        let experience = {
+            type:'dtdl' 
+        }
+        this.http.post('http://192.168.31.99:3000/api/doExperiences',
+        JSON.stringify(experience), {headers:this.headers})
+        // .toPromise()
+        .subscribe(function(res){
+            console.log(res.json());
+            },function (params) {
+            console.log("pi-server response is not ok")
+            });
+    }
     toggleShowVedio()
     {
         this.isShowVedio=!this.isShowVedio;
