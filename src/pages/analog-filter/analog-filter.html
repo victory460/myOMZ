@@ -102,8 +102,6 @@
                 <ion-col class="controls-wrapper">
                     <xaxis-controls [chart]="chart1"></xaxis-controls>
 
-                    <trigger #triggerComponent [chart]="chart1" (triggerTutotrialFinish)="triggerTutorialFinished($event)" [running]="running"></trigger>
-
                     <yaxis-controls #yaxisComponent [chart]="chart1" [running]="running"></yaxis-controls>
 
                     <fgen #fgenComponent (fgenTutorialFinish)="fgenTutorialFinished($event)"></fgen>
@@ -114,6 +112,8 @@
                     <div class="timeline-chart-wrapper to-hidden"  onlyForceShow="true">
                         <timeline-chart> </timeline-chart>
                     </div>
+                    <trigger class="to-hidden" #triggerComponent [chart]="chart1" (triggerTutotrialFinish)="triggerTutorialFinished($event)" [running]="running"></trigger>
+
                 </ion-col>
 
             </ion-row>
