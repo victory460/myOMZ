@@ -33,8 +33,9 @@
 .chart-component-wrapper .chart-container-container 
 {
    position: relative;  //为了子元素的absolute布局
-   width: 600px;
+   width: 700px;
    height: 400px;
+   margin: 50px auto;
     // flex: 1 1 400px;
     // flex: 1 1 auto;
     // -webkit-flex: 1 1 400px;

@@ -14,7 +14,7 @@
             <ion-col width-30 text-center center>
 
                 <div  class="page-title">
-                    <strong>远程实验平台</strong>
+                    <strong>远程操作实验平台</strong>
                 </div>
             </ion-col>
             <!-- 最上边 右边的两个按钮 single run -->
@@ -62,36 +62,6 @@
                 </div> -->
 
 
-                <ion-col >
-                    <button ion-button color="light" text-center><h1>低通滤波器电路</h1> <a class="chaolink" href="http://www.abang.com" target="_blank">下载实验课件</a></button>
-
-                    <div><h3>一、实验目的:</h3><br>掌握低通滤波器的原理，明白输出电压和输入电压之间的关系。</div>
-
-                    <div><h3>二、实验原理图：</h3></div>
-
-
-                    <!-- <ion-card class="card-pic">
-                        <img src="assets/img/tongXiangFangDa.png"/>
-                        <div class="card-title">图:同相比例放大电路</div>
-                    </ion-card> -->
-                    <div class="img-div">
-                        <img src="assets/img/diTongLvBo.png" alt="同相比例放大图">
-            
-                    </div>
-
-                    <div><h3>三、实验原理：</h3><br>
-                        根据运放的特性，可知其传递函数为
-                        A(s)=A_o/(1+s/ω_c )
-                        |A(jω)|=A_o/√(1+(ω/ω_c )^2 )
-                        其中A_o=1+R_f/R_1 ，ω_c=1/RC，由此可以计算出截止频率以及相对应的幅值。
-                        
-                    
-                    </div>
-
-
-
-                </ion-col>
-
                 <!-- 示波器显示黑底大图 -->
                 <ion-col >
                     <!-- <div>我好</div> -->
@@ -111,27 +81,6 @@
                         </div>
                     </div> -->
 
-
-                    <!-- 加按键做一个折叠 ，因为视频需要高速率传输，所以影响到了示波器图形的刷新，这个主要是受到浏览器本身的并发数和带宽限制 -->
-                    <button ion-button (click)="toggleShowVedio();" > 现场视频</button>
-                    <div *ngIf="isShowVedio">
-
-                        <img src="http://192.168.31.99:8081/" alt="这是现场视频"/>
-                    </div>
-
-
-                    <div><h3>四、实验步骤:</h3>
-                        <h6>
-                        a、给Vi输入±1V频率为200HZ的交流电压（信号）。
-                        </h6>
-                        <h6>
-                        b、观察相对应的输出波形Vo。
-                        </h6>
-                        <h6>
-                        c、将Vi的频率下调后重复以上a、b的步骤，观察Vo波形幅度的变化。
-                        </h6>                 
-                
-                    </div>
 
 
                     <!-- <ion-list>
@@ -159,12 +108,11 @@
 
                     <fgen #fgenComponent (fgenTutorialFinish)="fgenTutorialFinished($event)"></fgen>
 
-                    <digital-io #gpioComponent [chart]="chart1"></digital-io>
+                    <digital-io #gpioComponent [chart]="chart1" class="to-hidden"></digital-io>
 
-                    <dc-supply #dcComponent></dc-supply>
-                    <div class="timeline-chart-wrapper"  onlyForceShow="true">
+                    <dc-supply #dcComponent class="to-hidden"></dc-supply>
+                    <div class="timeline-chart-wrapper to-hidden"  onlyForceShow="true">
                         <timeline-chart> </timeline-chart>
-
                     </div>
                 </ion-col>
 

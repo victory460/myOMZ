@@ -72,11 +72,15 @@ page-analog-filter {
 
 }
 
+.to-hidden {
+    // display: none;
+    visibility: hidden;
+}
 .page-title{
     //    display:reflective;
     //    top: 20px;
     font-size: 30px;
-    color: #978df1;
+    color: #fbb636;
 
 }
 .chart-page-container .top-bar-container .inner-ctrls
