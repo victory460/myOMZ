@@ -1,7 +1,12 @@
 page-analog-filter {
 
-
-
+.to-hidden {
+    visibility: hidden;
+}
+h3, h6 {
+    margin: 0 0;
+    padding: 0 0;
+}
 
 //NEW
 .chart-page-container
@@ -76,7 +81,7 @@ page-analog-filter {
     //    display:reflective;
     //    top: 20px;
     font-size: 30px;
-    color: #978df1;
+    color: #fcf81b;
 
 }
 .chart-page-container .top-bar-container .inner-ctrls

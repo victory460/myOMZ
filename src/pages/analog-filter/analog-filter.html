@@ -14,7 +14,7 @@
             <ion-col width-30 text-center center>
 
                 <div  class="page-title">
-                    <strong>远程实验平台</strong>
+                    <strong>远程操作实验平台</strong>
                 </div>
             </ion-col>
             <!-- 最上边 右边的两个按钮 single run -->
@@ -65,7 +65,10 @@
                 <ion-col >
                     <button ion-button color="light" text-center><h1>低通滤波器电路</h1> <a class="chaolink" href="http://www.abang.com" target="_blank">下载实验课件</a></button>
 
-                    <div><h3>一、实验目的:</h3><br>掌握低通滤波器的原理，明白输出电压和输入电压之间的关系。</div>
+                    <div><h3>一、实验目的:</h3>
+                        <div class="text">
+                            掌握低通滤波器的原理，明白输出电压和输入电压之间的关系。
+                        </div></div>
 
                     <div><h3>二、实验原理图：</h3></div>
 
@@ -75,7 +78,7 @@
                         <div class="card-title">图:同相比例放大电路</div>
                     </ion-card> -->
                     <div class="img-div">
-                        <img src="assets/img/diTongLvBo.png" alt="同相比例放大图">
+                        <img src="assets/img/diTongLvBo.png" alt="同相比例放大图" style="width:450px;height:280px">
             
                     </div>
 
@@ -153,17 +156,18 @@
                 <ion-col class="controls-wrapper">
                     <xaxis-controls [chart]="chart1"></xaxis-controls>
 
-                    <trigger #triggerComponent [chart]="chart1" (triggerTutotrialFinish)="triggerTutorialFinished($event)" [running]="running"></trigger>
+             
+                    <yaxis-controls #yaxisComponent  [chart]="chart1" [running]="running"></yaxis-controls>
 
-                    <yaxis-controls #yaxisComponent [chart]="chart1" [running]="running"></yaxis-controls>
+                    <fgen #fgenComponent  (fgenTutorialFinish)="fgenTutorialFinished($event)"></fgen>
 
-                    <fgen #fgenComponent (fgenTutorialFinish)="fgenTutorialFinished($event)"></fgen>
+                    <digital-io #gpioComponent class="to-hidden"  [chart]="chart1" class="to-hidden" ></digital-io>
 
-                    <digital-io #gpioComponent [chart]="chart1"></digital-io>
-
-                    <dc-supply #dcComponent></dc-supply>
-                    <div class="timeline-chart-wrapper"  onlyForceShow="true">
+                    <dc-supply #dcComponent class="to-hidden"></dc-supply>
+                    <div class="timeline-chart-wrapper to-hidden"  onlyForceShow="true">
                         <timeline-chart> </timeline-chart>
+                        <trigger #triggerComponent class="to-hidden"  [chart]="chart1" (triggerTutotrialFinish)="triggerTutorialFinished($event)" [running]="running"></trigger>
+
 
                     </div>
                 </ion-col>
