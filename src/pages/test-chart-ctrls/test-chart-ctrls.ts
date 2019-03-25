@@ -98,7 +98,7 @@ export class TestChartCtrlsPage {
         this.storage = _storage;
         let awgData;
 
-        this.imgSrc="assets/img/res10K.png";
+        this.imgSrc="assets/img/tongXiangFangDa-10K.png";
         this.isShowVedio=false;
         this.initTongXiangRelays();
         this.getOscStatus()
@@ -1222,9 +1222,9 @@ export class TestChartCtrlsPage {
 
     replaceRes()
     {
-        if(this.imgSrc=="assets/img/res5K.png")
+        if(this.imgSrc=="assets/img/tongXiangFangDa-10K.png")
         {
-            this.imgSrc="assets/img/res10K.png";
+            this.imgSrc="assets/img/tongXiangFangDa-20K.png";
         //    this.gpioComponent.setGpioCh(1,0);
         let experience = {
             type:'txfd_2' //同相放大 3/2倍
@@ -1238,9 +1238,9 @@ export class TestChartCtrlsPage {
             console.log("pi-server response is not ok")
             });
         }
-       else if(this.imgSrc=="assets/img/res10K.png")
+       else if(this.imgSrc=="assets/img/tongXiangFangDa-20K.png")
         {
-            this.imgSrc="assets/img/res5K.png";
+            this.imgSrc="assets/img/tongXiangFangDa-10K.png";
             // this.gpioComponent.setGpioCh(1,1);
             let experience = {
                 type:'txfd_3/2' //同相放大2倍

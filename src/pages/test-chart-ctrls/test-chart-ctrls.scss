@@ -1,5 +1,11 @@
 page-test-chart-ctrls {
-
+    h3, h6 {
+        margin: 0 0;
+        padding: 0 0;
+    }
+    .to-hidden {
+        visibility: hidden;
+    }    
     //NEW
     .chart-page-container {
         //background-color: #535353;
